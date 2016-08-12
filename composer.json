@@ -1,12 +1,12 @@
 {
-    "name": "xploit-laravel/cloudflare",
+    "name": "xploit/lara-cloud",
     "description": "CloudFlare Provides A Simple CloudFlare Module For Laravel 5",
     "keywords": ["laravel", "framework", "cloudflare api", "cloudflare", "CloudFlare", "Laravel CloudFlare", "Laravel-CloudFlare", "Graham Campbell", "GrahamCampbell"],
     "license": "MIT",
     "authors": [
         {
-            "name": "Graham Campbell",
-            "email": "graham@alt-three.com"
+            "name": "s1rxploit",
+            "email": "s1rxploit@gmail.com"
         }
     ],
     "require": {
@@ -37,11 +37,7 @@
     "config": {
         "preferred-install": "dist"
     },
-    "extra": {
-        "branch-alias": {
-            "dev-master": "2.0-dev"
-        }
-    },
+
     "minimum-stability": "dev",
     "prefer-stable": true
 }
