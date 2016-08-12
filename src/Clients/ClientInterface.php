@@ -27,4 +27,6 @@ interface ClientInterface
      * @return \Psr\Http\Message\ResponseInterface
      */
     public function get($zone, array $params);
+      public function getzone(array $params);
+       public function getaddwhitelist($zone, array $params);
 }

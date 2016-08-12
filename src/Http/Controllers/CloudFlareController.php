@@ -14,6 +14,8 @@ namespace GrahamCampbell\CloudFlare\Http\Controllers;
 use GrahamCampbell\CloudFlare\Clients\ClientInterface;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\View;
+use Auth;
+use Request;
 
 /**
  * This is the cloudflare controller class.
@@ -78,4 +80,28 @@ class CloudFlareController extends Controller
 
         return View::make('cloudflare::data', ['data' => $data]);
     }
+        public function getZone()
+    {
+        $raw = $this->client->getzone(['status'=>'active','page'=>1,'per_page'=>20,'order'=>'status','direction'=>'desc','match'=>'all']);
+
+      $data = json_decode($raw->getBody(), true)['result'];
+return $data;
+    }
+        public function getAddwhitelist()
+    {
+        $mode=Request::get('mode','whitelist');
+        $ip=Request::get('ip');
+$note=Auth::id().'-'.Auth::user()->username;
+
+$data=["mode"=>"challenge","configuration"=>["target"=>"ip","value"=>$ip],"notes"=>$note];
+
+
+        $raw = $this->client->getaddwhitelist(,$this->zone,$data);
+
+      $data = json_decode($raw->getBody(), true)['result'];
+return $data;
+    }
+   
+
 }
+

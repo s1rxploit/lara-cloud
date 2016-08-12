@@ -12,3 +12,5 @@
 $router->get('cloudflare', ['as' => 'cloudflare.index', 'uses' => 'CloudFlareController@getIndex']);
 
 $router->get('cloudflare/data', ['as' => 'cloudflare.data', 'uses' => 'CloudFlareController@getData']);
+$router->get('cloudflare/zone', ['as' => 'cloudflare.zone', 'uses' => 'CloudFlareController@getZone']);
+$router->get('cloudflare/addwhitelist', ['as' => 'cloudflare.addwhitelist', 'uses' => 'CloudFlareController@getAddwhitelist']);

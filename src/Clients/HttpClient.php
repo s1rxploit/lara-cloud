@@ -49,6 +49,15 @@ class HttpClient implements ClientInterface
      */
     public function get($zone, array $params)
     {
-        return $this->client->get("{$zone}/analytics/dashboard", ['query' => $params]);
+        return $this->client->get("zones/{$zone}/analytics/dashboard", ['query' => $params]);
+    }
+
+        public function getzone(array $params)
+    {
+        return ($this->client->get("zones", ['query' => $params]));
+    }
+            public function getaddwhitelist($zone, array $params)
+    {
+        return ($this->client->get("zones/{$zone}/firewall/access_rules/rules", ['query' => $params]));
     }
 }
