@@ -71,4 +71,16 @@ class CachingClient implements ClientInterface
             return $this->client->get($zone, $params);
         });
     }
+        public function getzone(array $params)
+    {
+        return $this->cache->remember(sha1($this->email.json_encode($params)), 720, function () use ($params) {
+            return $this->client->getzone( $params);
+        });
+    }
+            public function getaddwhitelist($zone,array $params)
+    {
+        return $this->cache->remember(sha1($this->email.json_encode($params)), 720, function () use ($zone,$params) {
+             return $this->client->getaddwhitelist($zone, $params);
+        });
+    }
 }

@@ -90,7 +90,7 @@ class CloudFlareServiceProvider extends ServiceProvider
             $config = $app->config->get('cloudflare');
 
             $client = new Client([
-                'base_uri' => 'https://api.cloudflare.com/client/v4/zones/',
+                'base_uri' => 'https://api.cloudflare.com/client/v4/',
                 'headers'  => ['Accept' => 'application/json', 'X-Auth-Key' => $config['key'], 'X-Auth-Email' => $config['email']],
             ]);
 
